@@ -2,4 +2,6 @@
     <string name="app_name">Mobile Inc</string>
     <string name="sign_in">Sign in</string>
     <string name="title_activity_sign_in">Sign_in</string>
+    <string name="confirm_profile_button">Confirm</string>
+    <string name="choose_profile_text">Choose Profile</string>
 </resources>

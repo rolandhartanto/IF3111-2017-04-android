@@ -1,6 +1,5 @@
 package com.chlordane.android.mobileinc;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,15 +14,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class MainActivity extends AppCompatActivity implements
+public class FirstActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener {
 
     public static final int TEXT_REQUEST = 1;
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "FirstActivity";
     private static final int RC_SIGN_IN = 9001;
 
     private GoogleApiClient mGoogleApiClient;
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_first);
 
         mLoginButton = (Button) findViewById(R.id.loginButton);
 
@@ -52,8 +50,12 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void login(View view) {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        //Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        //startActivityForResult(signInIntent, RC_SIGN_IN);
+
+        //this code is temporary until google sign in feature is done
+        Intent signInIntent = new Intent(this, SignIn.class);
+        startActivityForResult(signInIntent, TEXT_REQUEST);
     }
 
     @Override
@@ -76,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements
             GoogleSignInAccount acct = result.getSignInAccount();
             Toast.makeText(this, acct.getDisplayName() + " " + acct.getEmail(), Toast.LENGTH_SHORT).show();
             // Go to next activity
-            Intent intent = new Intent(this, Sign_in.class);
+            Intent intent = new Intent(this, SignIn.class);
             startActivityForResult(intent, TEXT_REQUEST);
         } else {
             // Signed out

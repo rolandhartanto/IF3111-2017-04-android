@@ -2,12 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        config {
-            keyAlias 'MobileIncKey'
-            keyPassword 'rolandche'
-            storeFile file('C:/Users/asus/Desktop/MobileIncKey/keymobileinc.jks')
-            storePassword 'rolandche'
-        }
     }
     compileSdkVersion 25
     buildToolsVersion "26.0.1"
@@ -23,7 +17,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }

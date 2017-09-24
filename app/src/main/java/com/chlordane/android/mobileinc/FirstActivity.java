@@ -50,12 +50,12 @@ public class FirstActivity extends AppCompatActivity implements
     }
 
     public void login(View view) {
-        //Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-        //startActivityForResult(signInIntent, RC_SIGN_IN);
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
 
         //this code is temporary until google sign in feature is done
-        Intent signInIntent = new Intent(this, SignIn.class);
-        startActivityForResult(signInIntent, TEXT_REQUEST);
+        /*Intent signInIntent = new Intent(this, SignIn.class);
+        startActivityForResult(signInIntent, TEXT_REQUEST);*/
     }
 
     @Override
@@ -65,9 +65,7 @@ public class FirstActivity extends AppCompatActivity implements
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            //handleSignInResult(result);
-            Log.d(TAG, "result.getStatus().getStatusCode() = " + Integer.toString(result.getStatus().getStatusCode()));
-            Toast.makeText(this, Integer.toString(result.getStatus().getStatusCode()), Toast.LENGTH_LONG).show();
+            handleSignInResult(result);
         }
     }
 
@@ -82,7 +80,8 @@ public class FirstActivity extends AppCompatActivity implements
             startActivityForResult(intent, TEXT_REQUEST);
         } else {
             // Signed out
-            Toast.makeText(this, "fail to sign in", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "result.getStatus().getStatusCode() = " + Integer.toString(result.getStatus().getStatusCode()));
+            Toast.makeText(this, Integer.toString(result.getStatus().getStatusCode()), Toast.LENGTH_LONG).show();
         }
     }
 

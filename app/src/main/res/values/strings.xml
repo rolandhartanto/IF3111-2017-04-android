@@ -9,10 +9,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_label2">Trends</string>
     <string name="tab_label1">Home</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Mobile, Inc.</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_review_cart">Review Cart</string>
+    <string name="action_settings">Setting</string>
+    <string name="title_activity_shop">Cart</string>
+    <string name="title_back">Back</string>
+    <string name="title_see_cart">Review cart</string>
+    <string name="title_clear_cart">Clear cart</string>
 </resources>

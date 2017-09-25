@@ -54,8 +54,8 @@ public class FirstActivity extends AppCompatActivity implements
         startActivityForResult(signInIntent, RC_SIGN_IN);
 
         //this code is temporary until google sign in feature is done
-        /*Intent signInIntent = new Intent(this, SignIn.class);
-        startActivityForResult(signInIntent, TEXT_REQUEST);*/
+        //Intent signInIntent = new Intent(this, SignIn.class);
+        //startActivityForResult(signInIntent, TEXT_REQUEST);
     }
 
     @Override
